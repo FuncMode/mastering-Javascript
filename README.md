@@ -2,25 +2,25 @@
 	
  Core Topics:
 	
- ✅ JS Introduction
+ ✅ JS Introduction - done
  
- ✅JS Output (console.log, document.write, alert)
+ ✅JS Output (console.log, document.write, alert) - done
  
- ✅JS Syntax & Best Practices
+ ✅JS Syntax & Best Practices - done
  
- ✅JS Comments & Documentation
+ ✅JS Comments & Documentation - done
  
- ✅JS Variables (var, let, const)
+ ✅JS Variables (var, let, const) - done
  
- ✅JS Data Types (Primitives vs Reference)
+ ✅JS Data Types (Primitives vs Reference) - done
  
- ✅JS Operators (Arithmetic, Assignment, Comparison, Logical, typeof)
+ ✅JS Operators (Arithmetic, Assignment, Comparison, Logical, typeof) - done
  
- ✅JS Conditionals (if, else, switch, ternary)
+ ✅JS Conditionals (if, else, switch, ternary) - done
  
- ✅JS Loops (for, while, do..while, for..in, for..of)
+ ✅JS Loops (for, while, do..while, for..in, for..of) - done
  
- ✅JS Functions (declaration, expression, arrow)
+ ✅JS Functions (declaration, expression, arrow) - done
  
  ✅JS Scope (global, function, block)
  
