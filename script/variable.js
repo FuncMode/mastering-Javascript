@@ -100,3 +100,14 @@ student.age = newAge;
 console.log(student); */
 
 
+// syntax - container of every data types like (number, string, boeelan, null, undefine, array(special part of objec), object, function, );
+
+// pwedeng palitan or reassign the variable and chage the data (if you use let) o di na pwedeng palitan if (you use const)
+
+// let data = 'names';
+
+
+
+
+
+

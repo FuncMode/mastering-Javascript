@@ -1,3 +1,49 @@
 
 
-// document.write('hello world');
+// document.write('hello world'
+
+
+// ling by line execute (top to bottom)
+// console.log('hello world');
+
+// console.log('hi');
+
+
+// dynamically typed
+
+// let data = 'string'  // knows javascritp what did you type
+
+
+// console.log("1");
+// setTimeout(() => {
+//   console.log("2");
+// }, 1000);
+// console.log("3");
+
+
+/* 
+single threaded 
+*/
+
+// console.log('hello world');
+// console.log('hello world');
+// console.log('hello world');
+
+
+// console.log('hello world 1');
+
+
+// setTimeout(() => {
+//     console.log('mabuhay');
+// }, 3000);
+
+
+// console.log('hello world 2');
+
+
+/* 
+dito sa example na toh meron tayong asynchronous na settimeout na may delay na 2 so ang javascript ay tuloy tuloy ang run at hindi neto iniintay ang async na matapos bagkos tutuloy ito sa susunod na code if meron mann kasunod din kapag natapos na ang delay sa setTimeout tyaka neto babalikan neto javascript para kunin ang data doon
+*/
+
+
+// ang javascript ay kaya nitong mag hintay o mag sagawaa ng background task ng hindi pinipigilan ang ibang code 
