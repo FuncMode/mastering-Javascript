@@ -18,3 +18,15 @@
 
 
 
+// primitive data types - this is structured or complex data that:
+
+// not primitive 
+// store by referrence (hindi yung actual value ang nasa variable, kundi referrence sa ,memory)
+
+
+// let original = 2;
+// let copy = original;
+// copy = 2;
+// console.log(original);
+
+// primitive - store direct in the value if you copy  and changed it you can't changed the orignal you created new copy of the value

@@ -133,3 +133,141 @@ switch(day.getDay()) {
 
 
 })(); */
+
+
+/* const inputAge  = prompt('type your age');
+                // (ok or false click)         (if true user input not a number)                 
+const message = !inputAge ? alert('thanks') : isNaN(inputAge) ? alert('not a number, please try again!') : inputAge >= 18 ? alert('adult') : alert('minor'); */
+
+
+
+/* const message = document.querySelector('#message');
+// elements addEvent base input
+document.querySelector('#username').addEventListener('input', (e) => {
+    
+    let getValue = e.target.value;
+
+    if(!getValue) {
+        message.textContent = '';
+        return;
+    }
+
+    const isValid = /^[a-z0-9]{8}$/i.test(getValue);
+
+    message.textContent = isValid ? `✅ valid ${getValue}` : `❌ Should be exactly 8-character combination of letters and numbers. Please try again.`;
+}) */
+
+
+// document base
+
+/* document.addEventListener('input', dynamicValidation)
+
+function dynamicValidation(e) {
+
+    let getValue = e.target.value;
+
+    if(!getValue) {
+        message.textContent = '';
+        return;
+    }
+
+    const isValid = /^[a-z0-9]{8}$/i.test(getValue);
+
+    message.textContent = isValid ? `✅ valid ${getValue}` : `❌ Should be exactly 8-character combination of letters and numbers. Please try again.`;
+}
+ */
+
+// root of the dom
+
+/* window.addEventListener('input', dynamicValidation)
+
+function dynamicValidation(e) {
+
+    let getValue = e.target.value;
+
+    if(!getValue) {
+        message.textContent = '';
+        return;
+    }
+
+    const isValid = /^[a-z0-9]{8}$/i.test(getValue);
+
+    message.textContent = isValid ? `✅ valid ${getValue}` : `❌ Should be exactly 8-character combination of letters and numbers. Please try again.`;
+} */
+
+    // document.addEventListener('input', function (e) {
+
+    //     console.log(e)
+    // })
+
+
+
+/*     (() => {
+
+        const usernameInput = document.querySelector('#username');
+        const usernameRegex = /^[a-z0-9]{8}$/i;
+        const messageContainer = document.querySelector('#message');
+
+        function attachValidator({input, regex, messageContainer, messageError}) {
+            input.addEventListener('input', (e) => {
+
+                const { id, value } = e.target;
+                
+                if(!value) {
+                    messageContainer.textContent = '';
+                    input.className = '';
+                    return;
+                }
+
+                if(id === 'username') {
+
+                    const isValid = regex.test(value);
+                    
+                    input.className = isValid ? 'valid' : 'invalid';
+                    messageContainer.textContent = isValid ? '' : messageError;
+                }
+            })
+        }
+
+        attachValidator({
+            input: usernameInput,
+            regex: usernameRegex,
+            messageContainer: messageContainer,
+            messageError: '❌ Invalid username Format'
+        })
+
+    })(); */
+
+    // document.addEventListener('click', () => {
+    //     document.body.classList.toggle('background');
+    // })
+
+
+/*     let isActive = true;
+
+    document.addEventListener('click', () => {
+        isActive = !isActive;
+
+        document.body.style.background = isActive ? '#fff' : '#000';
+    }) */
+
+
+/*     function checkUserStatus(role) {
+
+        switch(role) {
+            case 'admin' : {
+                alert('Welcome admin!');
+                break;
+            };
+            case 'guest' : {
+                alert('Welcome guest!');
+                break;
+            };
+
+            default : {
+                alert('Access Denied!');
+                break;
+            }
+        }
+    } 
+    checkUserStatus('admin'); */
