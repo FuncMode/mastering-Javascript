@@ -30,3 +30,5 @@
 // console.log(original);
 
 // primitive - store direct in the value if you copy  and changed it you can't changed the orignal you created new copy of the value
+
+

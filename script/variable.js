@@ -106,8 +106,43 @@ console.log(student); */
 
 // let data = 'names';
 
+/* 
+const user = 'ikaw';
+
+// pass the variable
+function demo(userName) {
+    // if userName undefined 
+    return !userName ? alert('please insert username') : alert(`hi, ${userName}`);
+}
+
+demo(user); */
 
 
+// declaring variables
+// let person = 'ako';
+
+// declare after assign the value
+
+// let number = null; // intentional declare the variable with no value 
+
+// assign the value
+// number = 5;
+// console.log(number);
+// console.log(person);
 
 
+// var - can be reasign, redeclare and hoisted - function scope
+
+/* var person = 'ikaw';
+var person = 'ako';
+
+function varFunc() {
+    return console.log(person);
+}
+
+varFunc(); */
+
+// let - can reassign, bawal redeclare ang variable at block scope
+
+// const - bawal reassign at redeclare at daapt may initial value at block scope
 

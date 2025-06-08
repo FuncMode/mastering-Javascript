@@ -47,3 +47,4 @@ dito sa example na toh meron tayong asynchronous na settimeout na may delay na 2
 
 
 // ang javascript ay kaya nitong mag hintay o mag sagawaa ng background task ng hindi pinipigilan ang ibang code 
+// alert('hello world');
