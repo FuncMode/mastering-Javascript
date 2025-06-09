@@ -47,4 +47,41 @@ dito sa example na toh meron tayong asynchronous na settimeout na may delay na 2
 
 
 // ang javascript ay kaya nitong mag hintay o mag sagawaa ng background task ng hindi pinipigilan ang ibang code 
-// alert('hello world');
+// alert('hello world')
+
+// console.log('start');
+
+// setTimeout(() => {
+//     console.log('done');
+// }, 3000);
+
+// console.log('end');
+
+/* function diplayProcess(text) {
+    return document.querySelector('p').textContent = text;
+}
+
+
+function fetchData() {
+    diplayProcess('loading...');
+    return new Promise((res) => {
+
+        setTimeout(() => {
+            res('file done');
+        }, 4000);
+
+        setTimeout(() => {
+            diplayProcess('processing... please wait');
+        }, 2000);
+    });
+
+}
+
+fetchData()
+.then(data => {
+    diplayProcess(data);
+})
+.catch(err => {
+    diplayProcess(err);
+}) 
+ */

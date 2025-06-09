@@ -100,3 +100,7 @@ function checkRoleUser(user) {
 checkRoleUser(inputUser); */
 
 
+// function demo() {
+//   let message = 'hello world';
+// }
+

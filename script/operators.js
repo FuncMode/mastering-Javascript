@@ -254,12 +254,252 @@ console.log(x); */
 
 */
 
-(() => {
-
+/* (() => {
     const firstInput = document.querySelector('#firstInput');
     const secondInput = document.querySelector('#secondInput');
     const operators = document.querySelector('#operators');
-    const compute = document.querySelector('#compute');
     const result = document.querySelector('#result');
 
-})();
+    let firstNumberContainer = null;
+    let secondNumberContainer = null;
+    let operatorContainer = null;
+
+    firstInput.addEventListener('input', (e) => {
+
+        const { value } = e.target;
+
+        if(!value || isNaN(value)) return;
+
+        firstNumberContainer = value;
+        compute();
+    });
+
+    secondInput.addEventListener('input', (e) => {
+
+        const { value } = e.target;
+
+        
+        if(!value || isNaN(value)) return;
+
+        secondNumberContainer = value;
+        compute();
+    });
+
+    operators.addEventListener('change', (e) => {
+
+        const { operator } = e.target;
+
+        operatorContainer = operator;
+        compute();
+    });
+
+    function compute() {
+
+        if((firstNumberContainer && secondNumberContainer) === null || !operatorContainer) {
+            result.textContent = 'result: 0';
+            return;
+        }
+
+        let computeResult = null;
+
+        switch(operatorContainer) {
+            case '+' : {
+                computeResult = firstNumberContainer + secondNumberContainer;
+                break;
+            }
+            case '-' : {
+                computeResult = firstNumberContainer- secondNumberContainer;
+                break;
+            }
+            case '*' : {
+                computeResult = firstNumberContainer * secondNumberContainer;
+                break;
+            }
+            case '/' : {
+                computeResult = firstNumberContainer / secondNumberContainer;
+                break;
+            }
+            default : {
+                computeResult = '❌ Unknown operator';
+            }
+        }
+
+        result.textContent = `Result: ${computeResult}`;
+    }
+
+})(); */
+
+
+
+// (() => {
+//     const firstInput = document.querySelector('#firstInput');
+//     const secondInput = document.querySelector('#secondInput');
+//     const computeContainer = document.querySelector('#compute');
+//     const operators = document.querySelector('#operators');
+//     const result = document.querySelector('#result');
+
+//     let firstValue = null;
+//     let secondValue = null;
+//     let operator = null;
+
+//     // dyanamic type of number
+//     firstInput.addEventListener('input', (e) => {
+//         const value = e.target.value;
+
+//         firstValue = Number(value);
+//         computeDisplay();
+//     });
+
+// // dyanamic type of number
+//     secondInput.addEventListener('input', (e) => {
+//         const value = e.target.value;
+
+//         secondValue = Number(value);
+//         computeDisplay();
+//     });
+
+
+//     // dynamic select operators
+//     operators.addEventListener('change', (e) => {
+//         operator = e.target.value;
+//         computeDisplay();
+//     });
+
+//     // display compute user
+//     function computeDisplay() {
+
+//         // if firstValue and secondValue if false set 0 in textContent if true set the current value Number and the operator ganun din
+//         computeContainer.textContent = `${!firstValue ? '0' : firstValue} ${!operator ? operators.value : operator} ${!secondValue ? '0' : secondValue} =`;
+
+//         // if firstValue and secondValue is === 0 clear the computeContainer and return or exit agad
+//         if(firstValue === 0 && secondValue === 0) {
+//             computeContainer.textContent = '';
+//             result.textContent = 'result: 0';
+//             return
+//         }
+
+//         /* 
+//         ang balak ko ay mag eval so dapat equal ang firstValue at secondValue sa computeContainer
+//         */
+//         resultDisplay()
+//     }
+
+//     // display total result
+//     function resultDisplay() {
+
+//         // base
+//         let computeResult = null;
+//         // remove equal in textContent
+//         if(computeContainer.textContent.includes('=')) {
+//             computeResult = `${!firstValue ? '0' : firstValue} ${!operator ? operators.value : operator} ${!secondValue ? '0' : secondValue}`;
+//         }   
+
+//         // total
+//         result.textContent = `result: ${eval(computeResult)}`;
+//     }
+// })();
+
+
+/* 
+(() => {
+
+    const firstInputNumber = document.querySelector('#firstInput');
+    const selectOperators = document.querySelector('#operators');
+    const secondInputNumber = document.querySelector('#secondInput');
+
+    let firstValueNumber = null;
+    let secondValueNumber = null;
+    let operatorValue = selectOperators.value;
+
+    // dynmic input to get firstNumberValue
+    // firstInputNumber.addEventListener('input', getHandleFirstInput);
+
+    // // dynamic Input callback
+    // function getHandleFirstInput(e) {
+
+    //     const { value } = e.target;
+    //     firstValueNumber = Number(value);
+    //     getAllValue()
+    // }
+
+    // Generalized input handler for both numbers
+        function handleNumberInput(e, assignTo) {
+            const { value } = e.target;
+            // Assign value dynamically based on the passed reference
+            if(assignTo === 'first') firstValueNumber = Number(value);
+            if(assignTo === 'second') secondValueNumber = Number(value);
+            getAllValue();
+        }
+
+        // Apply handler to both inputs
+        firstInputNumber.addEventListener('input', (e) => handleNumberInput(e, 'first'));
+        secondInputNumber.addEventListener('input', (e) => handleNumberInput(e, 'second'));
+
+
+
+    // dynmic change select operator to change  
+    selectOperators.addEventListener('change', selectHandleOperator);
+
+    // callback function
+    function selectHandleOperator(e) {
+
+        const { value } = e.target;
+        operatorValue = value;
+        getAllValue()
+    }
+
+    // dynmic input to get secondNumberValue
+    // secondInputNumber.addEventListener('input', getHandleSecondNumber);
+
+    //     // dynamic Input callback
+    // function getHandleSecondNumber(e) {
+
+    //     const { value } = e.target;
+    //     secondValueNumber = Number(value);
+    //     getAllValue()
+    // }
+
+    // get all value in the input number and select operator
+    function getAllValue() {
+        isValidNumberToDisplay();
+    }
+
+    // i don't want to dispaly zero value
+    function isValidNumberToDisplay() {
+        // display Compute
+        computeDisplayValue('#compute', `${firstValueNumber || '0'} ${operatorValue} ${secondValueNumber || '0'}`);
+        
+        // if first and second number is zero is true exit agad and no display
+        if(firstValueNumber === 0 && secondValueNumber === 0) {
+            computeDisplayValue('#compute', 'no input number, clear');
+            computeDisplayValue('#result', 'result: 0');
+
+            // clear the text;
+            setTimeout(() => {
+                    computeDisplayValue('#compute', '');
+            }, 2000);
+            return;
+        };
+        resultTotalDisplay(operatorValue);
+    }
+
+    // display total value
+    function resultTotalDisplay(operatorValue) {
+
+        // lookup obj to compare in the operatorValue
+        const operations = {
+            '+': (a, b) => a + b,
+            '-': (a, b) => a - b,
+            '*': (a, b) => a * b,
+            '/': (a, b) => b !== 0 ? a / b : 'Cannot divide by zero',
+        };
+
+        computeDisplayValue('#result', `result: ${operations[operatorValue](firstValueNumber, secondValueNumber)}`);
+        
+    }
+
+    // dom updates
+    function computeDisplayValue(element, value) {
+        return document.querySelector(element).textContent = value;
+    }
+})(); */
