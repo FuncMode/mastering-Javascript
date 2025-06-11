@@ -274,3 +274,31 @@ function dynamicValidation(e) {
 
 
     
+    /* 
+    function Name = action word + noun
+    variableName = purpose of variable (descriptive noun)
+    */
+    // (() => {
+    
+    //     const elementsDataUser = {
+    //         userNameElem: document.querySelector('#username'),
+    //         emailElem: document.querySelector('#email'),
+    //         passwordElem: document.querySelector('#password'),
+    //         messageErr: [
+    //             {
+    //                 username: document.querySelector('#usernameMessageErr'),
+    //                 email: document.querySelector('#emailMessageErr'),
+    //                 password: document.querySelector('#passwordMessageErr')
+    //             }
+    //         ]
+    //     }
+
+    //     const isValidUsername = /^[A-Za-z0-9]{8}$/;
+    //     const isValidEmail = ;
+    //     const isValidPassword = 
+
+
+        
+    // })();
+
+

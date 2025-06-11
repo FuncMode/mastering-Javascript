@@ -6,7 +6,7 @@
     <title>conditional</title>
 </head>
     <style>
-        .valid {
+        /* .valid {
             border: 3px solid green;
         }
 
@@ -16,6 +16,13 @@
 
         .background {
             background-color: black;
+        } */
+        
+        .valid {
+            border: 3px solid #008000;
+        }
+        .isValid {
+            border: 3px solid #ff0000;
         }
     </style>
 <body>
@@ -32,6 +39,21 @@
 
     <!-- <input title="username" type="text" id="username" placeholder="type your username..." autocomplete="off">
     <p id="message"></p> -->
+    <!-- form validation -->
+    <!-- <form action="#" autocomplete="off">
+        <label for="username">username:</label>
+        <input type="text" id="username" name="username" data-regex="">
+        <p id="usernameMessageErr"></p>
+
+        <label for="email">email:</label>
+        <input type="email" id="email" name="email">
+        <p id="emailMessageErr"></p>
+
+        <label for="password">password:</label>
+        <input type="password" id="password" name="password">
+        <p id="passwordMessageErr"></p>
+    </form> -->
+    <!-- <input type="text" data-min-length="5" data-max-length="10"> -->
     <script src="/javascript/script/conditional.js"></script>
 </body>
 </html>

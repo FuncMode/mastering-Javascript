@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>operators</title>
 </head>
+    <style>
+        select {
+            text-align: center;
+        }
+    </style>
 <body>
     <!-- basic calculator -->
-    <input type="number" id="firstInput" placeholder="type your firstNumber">
+<!--     <input type="number" id="firstInput" placeholder="type your firstNumber">
     <select title="operators" id="operators">
         <option value="+">+</option>
         <option value="-">-</option>
@@ -16,7 +21,18 @@
     </select>
     <input type="number" id="secondInput" placeholder="type your secondInput">
     <div id="compute"></div>
-    <p id="result">result: 0</p>
+    <p id="result">result: 0</p> -->
+    <!-- dynamic calculator -->
+    <input title="InputNumber" id="firstInputNumber" type="number" placeholder="Type firstNumber..." min="0">
+    <select title="operators" id="operators" >
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="/">/</option>
+        <option value="*">x</option>
+    </select>
+    <input title="InputNumber" id="secondInputNumber" type="number" placeholder="Type secondNumber..." min="0">
+    <div id="computeDisplay"></div>
+    <h1 id="result">result: 0</h1>
     <script src="/javascript/script/operators.js"></script>
 </body>
 </html>

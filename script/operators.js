@@ -503,3 +503,97 @@ console.log(x); */
         return document.querySelector(element).textContent = value;
     }
 })(); */
+
+
+(() => {
+
+    // remove text automatically
+    // function autoRemoveText(elemId, text, callbackFunc) {
+    //     setTimeout(() => {
+    //         callbackFunc(elemId, text);
+    //     }, 3000);
+    // }
+
+    // to reuse again for dynamic changes input
+    function isHasInputValueDisabled(value) {
+        return document.querySelector('#operators').disabled = value;
+    };
+
+    // default disable if no value input
+    isHasInputValueDisabled(true);
+
+    // to store the input value
+    const values = {
+        firstValueInput: null,
+        operatorValue: '+',
+        secondValueInput: null,
+    };
+
+    // to get value number and operator
+    function getHandleInputNumber(elementId, action, key) {
+        document.querySelector(elementId).addEventListener(action, (e) => {
+
+            // get value number or operator value
+            const { value } = e.target;
+            
+            // if no input in the both input values it's converted to Number because false is zero in number
+            values[key] = value || 0;
+            //if operator value is true of NaN  insert value of operators if not base '+' value
+            validationToDisplayValue(value);
+        });
+    };
+
+    // call function to get value input user
+    getHandleInputNumber('#firstInputNumber', 'input', 'firstValueInput');
+    getHandleInputNumber('#operators', 'change', 'operatorValue');
+    getHandleInputNumber('#secondInputNumber', 'input', 'secondValueInput');
+
+    // validation section 
+    function validationToDisplayValue(value) {
+
+        // if no input both input number  - display text (clear
+        if(!value) {
+            messageOrResult('#computeDisplay', 'Clear!');
+            isHasInputValueDisabled(true);
+            messageOrResult('#result', 'result: 0');
+            // autoRemoveText('#computeDisplay', '', messageOrResult);
+            return;
+        };
+
+        // validate no input number dpat meron silang parehas if isng input lang ang merong number reject
+        if(values['firstValueInput'] && !values['secondValueInput'] || values['secondValueInput'] && !values['firstValueInput']) {
+            messageOrResult('#computeDisplay', 'both Input Should have Input Value Number!');
+            isHasInputValueDisabled(true)
+            return;
+        };
+
+        // if both input is zero value = input more than zero!
+        if(values['firstValueInput'] && values['secondValueInput'] === '0' || values['firstValueInput'] === '0' || values['secondValueInput'] === '0') {
+            messageOrResult('#computeDisplay', 'input more than zero in both input or next input!');
+            return;
+        }
+        // if no zero in  first and second value display
+        messageOrResult('#computeDisplay', `${values['firstValueInput']} ${values['operatorValue']} ${values['secondValueInput']} = `);
+        isHasInputValueDisabled(false);
+        calculateTotalInputNumber(values['operatorValue'], values['firstValueInput'], values['secondValueInput']);
+    };
+
+    // get element and insert txt value
+    function messageOrResult(elementId, text) {
+        return document.querySelector(elementId).textContent = text;
+    };
+
+    // calculate Input Number value
+    function calculateTotalInputNumber(operator, firstNum, secondNum) {
+
+        const operations = {
+            '+' : (a, b) => a + b,
+            '-' : (a, b) => a - b,
+            '*' : (a, b) => a * b,
+            '/' : (a, b) => a / b, 
+        };
+
+        messageOrResult('#result', `result: ${operations[operator](Number(firstNum), Number(secondNum))}`);
+    };
+
+})();
