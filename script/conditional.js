@@ -302,3 +302,44 @@ function dynamicValidation(e) {
     // })();
 
 
+
+/* const userAge = prompt('type your age?');
+
+if(userAge > 18) {
+    alert('sarap');
+} else if (userAge == 18) {
+    alert('mas masarap');
+} else {
+    alert('super sarap!');
+} */
+
+// falsy values:
+/* 
+0
+null
+undefined
+NaN
+''
+*/
+// mga truthy values mga hindi nabanggit
+
+/* console.log(null == undefined); // true
+
+
+console.log(null === undefined); // false same value but is not same data type
+// null value
+console.log(!!null); // false
+
+// undefined value 
+console.log(!!undefined); // false */
+
+function isLoggin(user) {
+    if(!user) {
+        alert('access denied!');
+        return;
+    }
+
+    // location.assign('https://youtube.com');
+}
+
+// isLoggin(true);

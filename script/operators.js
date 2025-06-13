@@ -504,7 +504,7 @@ console.log(x); */
     }
 })(); */
 
-
+/* 
 (() => {
 
     // remove text automatically
@@ -597,3 +597,131 @@ console.log(x); */
     };
 
 })();
+ */
+
+// let count = 0;
+
+// setInterval(() => {
+//     console.log(count);
+//     count = (count + 1) % 6;
+// }, 1000);
+
+
+// console.log('5' != 5); // false 
+
+// const input = document.querySelector('#username');
+// console.log(input);
+
+
+/* (() => {
+    document.querySelector('button').addEventListener('click', () => {
+            // correct input user
+    const validUsername = 'admin';
+    const validPassword = 'admin123';
+
+    // input data user
+    function handleInputUser(elementId) {
+        return document.querySelector(elementId);
+    }
+
+    // get input user value
+    const getInputUsername = handleInputUser('#username').value.trim();
+    const getInputPassword = handleInputUser('#password').value.trim();
+
+    // if true not equal reject
+    const isValidInputUsername = getInputUsername !== validUsername;
+    const isValidInputPassword = getInputPassword !== validPassword;
+
+    // if no input user
+    const isNoInputUser = !getInputPassword && !getInputPassword;
+
+    // validition section
+    function validateInputUser() {
+        if(isNoInputUser) {
+            handleInputUser('#username').required = true;
+            console.log(handleInputUser('#username'))
+            alert('ok');
+            return;
+        };
+    }
+    validateInputUser();
+    });
+})(); */
+
+
+// const checkUserDiscount = prompt('type your purchase total');
+// const userIsMember = prompt('you are member in this shop');
+
+// // validation user 
+// function validateUserAnswer(checkUserDiscount, userIsMember) {
+
+//     switch(true) {
+
+//         // no input 
+//         case (!checkUserDiscount && !userIsMember) : {
+//             alert('cancel');
+//             break;
+//         };
+
+//         // no input user memeber
+//         case (checkUserDiscount && !userIsMember || !checkUserDiscount && userIsMember) : {
+//             alert('please input user Member or discouunt should be both have value');
+//             break;
+//         };
+
+//     }
+// }
+
+// validateUserAnswer(checkUserDiscount, userIsMember);
+
+
+/* function checkEligbleDiscount(totalPurchase, isMember) {
+
+    if(totalPurchase >= 1000 && isMember === true) {
+        alert('you have discount!');
+        return;
+    }
+    alert('no discount');
+}
+
+checkEligbleDiscount(1000, true); */
+
+/* 
+function validateLogin(password, accountLocked) {
+
+    
+    if((password === 'admin123' || password === 'user456') && accountLocked === true) {
+        alert('account Locked!, please try again');
+        return;
+    }
+
+    if ((password !== 'admin123' || password !== 'user456') && accountLocked === true || accountLocked === false) {
+        alert('wrong password');
+        return;
+    } 
+
+    if((password === 'admin123' || password === 'user456') && accountLocked === false) {
+        alert('login sucess');
+    }
+}
+
+
+validateLogin('admin123', false); */
+/* 
+function checKAgeEnterEvent(age, isbanned) {
+    if(age >= 18 && isbanned !== false) {
+        alert('allowed but you are banned this event');
+        return;
+    };
+
+    if(age < 18 && isbanned !== true) {
+        alert('not allowed under age!');
+        return;
+    }
+
+    if(age > 18 && isbanned !== true) {
+        alert('welcome!');;
+    } 
+}
+
+checKAgeEnterEvent(28, false); */

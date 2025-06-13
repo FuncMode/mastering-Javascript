@@ -146,3 +146,30 @@ varFunc(); */
 
 // const - bawal reassign at redeclare at daapt may initial value at block scope
 
+
+// ang variable ay container ng mga data types tulad ng:
+/* 
+- string
+- number
+- boolean
+- null
+- undefined
+- object
+    - array
+- function
+- symbol
+- BigInt
+
+*/
+
+//  !== - tinitignan kung hindi sila same ng value at data type or kahit isa lang dyan 
+// console.log(23 === Object(23)); // false
+
+// const tempStr = new Object('hello world');
+// console.log(tempStr.toUpperCase()); 
+
+// let original = null;
+// let copy = original;
+// console.log(original);
+// console.log(copy = 'hello world');
+// console.log(original);

@@ -14,7 +14,7 @@ function greet(name) {
 const result = greet(fname);
 
 // see the result
-console.log(result);
+// console.log(result);
 
 
 
@@ -103,4 +103,17 @@ checkRoleUser(inputUser); */
 // function demo() {
 //   let message = 'hello world';
 // }
+/* 
+const user = prompt('type your role');
+const userActive = confirm('active ka ba?');
+const userAge = prompt('type your age');
 
+
+const userExist = !user;
+const userIsActive = !userActive;
+const userIsAdult = !userAge;
+
+
+if(userExist && userIsActive && userIsAdult) {
+  alert('no user and no input');
+}  */
