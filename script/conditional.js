@@ -332,7 +332,7 @@ console.log(!!null); // false
 
 // undefined value 
 console.log(!!undefined); // false */
-
+/* 
 function isLoggin(user) {
     if(!user) {
         alert('access denied!');
@@ -340,6 +340,8 @@ function isLoggin(user) {
     }
 
     // location.assign('https://youtube.com');
-}
+} */
 
 // isLoggin(true);
+
+

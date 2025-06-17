@@ -187,13 +187,13 @@ while(limitEnterPass) {
     //     console.log(i);
     //     i--;
     // } while(i > 0)
-
+/* 
     const person = {
         name: "Juan", 
         age: 25, 
         city: "Manila" 
     };
-
+ */
 /*     for (let per in person) {
         console.log(`${per}: ${person[per]}`);
     } */
@@ -585,180 +585,379 @@ while(limitEnterPass) {
 // })();
 
 
-(() => {
-    // storing inputNumber and select operators
-    const values = {
-        baseInput: 0,
-        selectOp: '+',
-        maxInput: 0,
-    };
+// (() => {
+//     // storing inputNumber and select operators
+//     const values = {
+//         baseInput: 0,
+//         selectOp: '+',
+//         maxInput: 0,
+//     };
 
-    // get input and select opeartor value
-    const handleInput = (elementId, event, key) => {
-        document.querySelector(elementId).addEventListener(event, (e) => {
-            // get element value once action trigger
-            const { value } = e.target;
+//     // get input and select opeartor value
+//     const handleInput = (elementId, event, key) => {
+//         document.querySelector(elementId).addEventListener(event, (e) => {
+//             // get element value once action trigger
+//             const { value } = e.target;
 
-            // store to object if argument match in the key of obj 
-            values[key] = key === 'selectOp' ? value : Number(value);
-            // console.log(`${typeof values['base']} ${values['op']} ${typeof values['max']}`)
-            validateInput();
-        });
-    };
+//             // store to object if argument match in the key of obj 
+//             values[key] = key === 'selectOp' ? value : Number(value);
+//             // console.log(`${typeof values['base']} ${values['op']} ${typeof values['max']}`)
+//             validateInput();
+//         });
+//     };
 
-    // start getting input user once action trigger
-    handleInput('#baseNumber', 'input', 'baseInput');
-    handleInput('#arithmetic', 'change', 'selectOp');
-    handleInput('#maximumNumber', 'input', 'maxInput');
+//     // start getting input user once action trigger
+//     handleInput('#baseNumber', 'input', 'baseInput');
+//     handleInput('#arithmetic', 'change', 'selectOp');
+//     handleInput('#maximumNumber', 'input', 'maxInput');
 
 
-    /* Elements helper */
-    // for all element
-    const element = (el) => document.querySelector(el);
-    const showElement = (el, displayValue) => element(el).style.display = displayValue;
-    const showSetText = (el, textValue) => element(el).textContent = textValue;
-    const resetContent = (el) => element(el).innerHTML = '';
-    const setInvalid = (el) => {
-        element(el).className = 'invalid';
+//     /* Elements helper */
+//     // for all element
+//     const element = (el) => document.querySelector(el);
+//     const showElement = (el, displayValue) => element(el).style.display = displayValue;
+//     const showSetText = (el, textValue) => element(el).textContent = textValue;
+//     const resetContent = (el) => element(el).innerHTML = '';
+//     const setInvalid = (el) => {
+//         element(el).className = 'invalid';
 
-        setTimeout(() => element(el).className = '', 2000);
-    };
+//         setTimeout(() => element(el).className = '', 2000);
+//     };
 
-    // to validate number to display or not
-    function validateInput() {
-        // obj values
-        const { baseInput, maxInput } = values;
+//     // to validate number to display or not
+//     function validateInput() {
+//         // obj values
+//         const { baseInput, maxInput } = values;
 
-        // if no enter value
-        if(!baseInput && !maxInput) {
-            setInvalid('#baseNumber');
-            setInvalid('#maximumNumber');
-            showElement('#content', 'block');
-            showSetText('#content', `- no enter value, please try again! -`);
-            return;
-        }
+//         // if no enter value
+//         if(!baseInput && !maxInput) {
+//             setInvalid('#baseNumber');
+//             setInvalid('#maximumNumber');
+//             showElement('#content', 'block');
+//             showSetText('#content', `- no enter value, please try again! -`);
+//             return;
+//         }
 
-        // if no enter value in max
-        if(baseInput && !maxInput) {
-            disableSelectOperator(true);
-            showElement('#btn', 'none');
-            setInvalid('#maximumNumber');
-            showElement('#content', 'block');
-            showSetText('#content', `- please enter value in (maximum) number! -`);
-            return;
-        }
+//         // if no enter value in max
+//         if(baseInput && !maxInput) {
+//             disableSelectOperator(true);
+//             showElement('#btn', 'none');
+//             setInvalid('#maximumNumber');
+//             showElement('#content', 'block');
+//             showSetText('#content', `- please enter value in (maximum) number! -`);
+//             return;
+//         }
 
-        // if no enter value in base
-        if(!baseInput && maxInput) {
-            disableSelectOperator(true);
-            showElement('#btn', 'none');
-            setInvalid('#baseNumber');
-            showElement('#content', 'block');
-            showSetText('#content', `- please enter value in (base) number! -`);
-            return;
-        }
+//         // if no enter value in base
+//         if(!baseInput && maxInput) {
+//             disableSelectOperator(true);
+//             showElement('#btn', 'none');
+//             setInvalid('#baseNumber');
+//             showElement('#content', 'block');
+//             showSetText('#content', `- please enter value in (base) number! -`);
+//             return;
+//         }
 
-        // if valid just display
-        disableSelectOperator(false);
-        showElement('#btn', 'block');
-        showSetText('#content', `- Table of (${baseInput}) to (${maxInput}) -`);
-    };
+//         // if valid just display
+//         disableSelectOperator(false);
+//         showElement('#btn', 'block');
+//         showSetText('#content', `- Table of (${baseInput}) to (${maxInput}) -`);
+//     };
 
-    function disableSelectOperator(value) {
-        element('#arithmetic').disabled = value;
+//     function disableSelectOperator(value) {
+//         element('#arithmetic').disabled = value;
+//     }
+//     /* for click and Enter User */
+//     element('#btn').addEventListener('click', generateTable);
+//     document.addEventListener('keydown', (e) => {
+
+//         if(e.key === 'Enter') generateTable();
+//     });
+
+//     async function generateTable() {
+//         const { baseInput, selectOp, maxInput } = values;
+
+
+//         // if no enter value
+//         if(!baseInput && !maxInput) {
+//             setInvalid('#baseNumber');
+//             setInvalid('#maximumNumber');
+//             showElement('#content', 'block');
+//             showSetText('#content', `- no enter value, please try again! -`);
+//             return;
+//         }
+
+//         // if no enter value in max
+//         if(baseInput && !maxInput) {
+//             disableSelectOperator(true);
+//             showElement('#btn', 'none');
+//             setInvalid('#maximumNumber');
+//             showElement('#content', 'block');
+//             showSetText('#content', `- please enter value in (maximum) number! -`);
+//             return;
+//         }
+
+//         // if no enter value in base
+//         if(!baseInput && maxInput) {
+//             disableSelectOperator(true);
+//             showElement('#btn', 'none');
+//             setInvalid('#baseNumber');
+//             showElement('#content', 'block');
+//             showSetText('#content', `- please enter value in (base) number! -`);
+//             return;
+//         }
+
+//         // show spinner loading if valid
+//         showElement('.spinner', 'block');
+//         // reset first before insert
+//         resetContent('.child-table');
+//         // clear input when done generate table
+//         clearInput();
+
+//         const fragment = document.createDocumentFragment();
+
+//         for (let i = 0; i < maxInput; i++) {
+//             // loading effect
+//             await delay(0);
+
+//             const p = document.createElement('p');
+//             p.textContent = createTableRow(baseInput, selectOp, i); 
+//             fragment.appendChild(p);
+//         };
+
+//         showElement('.spinner', 'none');
+//         element('.child-table').appendChild(fragment);
+
+//     };
+
+//     function createTableRow(baseInput, selectOp, i) {
+//         const symbol = selectOp === '*' ? 'x' : selectOp;
+//         // inital value
+//         let result = 0;
+
+//         // if user select divide to prevent infinity
+//         if(selectOp === '/') {
+//             result = i === 0 ? '(Cannot divide by zero)' : (baseInput / i).toFixed(2);
+//         } else {
+//             result = eval(`${baseInput} ${selectOp} ${i}`);
+//         }
+
+//         return `${baseInput} ${symbol} ${i} = ${result}`;
+//     }
+
+//     function delay(ms) {
+//         return new Promise(resolve => setTimeout(resolve, ms));
+//     }
+
+//     function clearInput() {
+//         element('#baseNumber').value = '';
+//         element('#maximumNumber').value = '';
+//         values['baseInput'] = 0;
+//         values['maxInput'] = 0;
+//         disableSelectOperator(true);
+//         showElement('#btn', 'none');
+//     }
+
+//     disableSelectOperator(true);
+//     showElement('#content', 'block');
+//     showSetText('#content', '- table will appear here -');
+// })(); 
+
+
+
+// console.log(sum);
+
+/* 
+const numbers = [1,2,3,4,5];
+let currentIndex = 0;
+let sum = 0;
+let numLen = numbers.length;
+while(currentIndex < numLen) {
+    sum += numbers[currentIndex];
+    currentIndex++;
+}
+console.log(sum); */
+/* 
+let n = 10;
+
+do {
+    console.log(n);
+    n--;
+} while(n > 0);  */
+
+// const person = { name: "Juan", age: 25, city: "Manila" };
+
+
+// const { name, age, city } = person;
+// console.log();
+// console.log('name' in person);
+// for (let per on )
+
+// for (let [key, value] of Object.entries(person)) {
+//     console.log(key, value);
+// }
+
+// for (let {key, value} = person) {
+
+// }
+
+
+/* const fruits = ["apple", "banana", "mango"];
+
+const [ a, b, c ] = fruits;
+console.log(c); */
+// const [0,23] = fruits;
+
+
+/* let attemps = 3;
+let password = 'tangaa';
+
+
+
+while(attemps) {
+
+    let typePassword = prompt('type your password');
+
+    if(typePassword === password) {
+        alert('success');
+        break;
     }
-    /* for click and Enter User */
-    element('#btn').addEventListener('click', generateTable);
-    document.addEventListener('keydown', (e) => {
 
-        if(e.key === 'Enter') generateTable();
-    });
+    attemps--;
+    alert(`you have ${attemps}!`);
+} */
+/* 
+    const prices = [100, 200, 300]; // Total: 600
+    let total = 0;
+for (let add of prices) {
+    total += add;
+}
+console.log(total); */
 
-    async function generateTable() {
-        const { baseInput, selectOp, maxInput } = values;
+// for (let i = 1; i <= 30; i++) {
+//     if(i % 3 === 0 && i % 5 === 0) {
+//         console.log('FizzBuzz');
+//     } else if (i % 3 === 0) {
+//         console.log('Fizz');
+//     } else if (i % 5 === 0) {
+//         console.log('Buzz');
+//     } else {
+//         console.log(i);
+//     }
+// }
 
 
-        // if no enter value
-        if(!baseInput && !maxInput) {
-            setInvalid('#baseNumber');
-            setInvalid('#maximumNumber');
-            showElement('#content', 'block');
-            showSetText('#content', `- no enter value, please try again! -`);
-            return;
+/* 
+if odd console(number) and odd kung hindi console(even) and number
+ */
+
+/* for (let i = 1; i < 10; i++) {
+    if(i % 2 === 0) {
+        console.log('even', i);
+    } else {
+        console.log('odd',i);
+    }
+}  */
+
+
+/*     for (let i = 1; i < 10; i++) {
+        if (i % 2 === 1) {
+            
+            if(i === 5) {
+                console.log('ok')
+            } else {
+                console.log(i);
+            }
         }
+    } */
 
-        // if no enter value in max
-        if(baseInput && !maxInput) {
-            disableSelectOperator(true);
-            showElement('#btn', 'none');
-            setInvalid('#maximumNumber');
-            showElement('#content', 'block');
-            showSetText('#content', `- please enter value in (maximum) number! -`);
-            return;
-        }
+    // console.log(1 % 2 === 1);
+    // console.log(2 % 2 === 1)
+    // console.log(3 % 2 === 1);
 
-        // if no enter value in base
-        if(!baseInput && maxInput) {
-            disableSelectOperator(true);
-            showElement('#btn', 'none');
-            setInvalid('#baseNumber');
-            showElement('#content', 'block');
-            showSetText('#content', `- please enter value in (base) number! -`);
-            return;
-        }
-
-        // show spinner loading if valid
-        showElement('.spinner', 'block');
-        // reset first before insert
-        resetContent('.child-table');
-        // clear input when done generate table
-        clearInput();
-
-        const fragment = document.createDocumentFragment();
-
-        for (let i = 0; i < maxInput; i++) {
-            // loading effect
-            await delay(0);
-
-            const p = document.createElement('p');
-            p.textContent = createTableRow(baseInput, selectOp, i); 
-            fragment.appendChild(p);
-        };
-
-        showElement('.spinner', 'none');
-        element('.child-table').appendChild(fragment);
-
-    };
-
-    function createTableRow(baseInput, selectOp, i) {
-        const symbol = selectOp === '*' ? 'x' : selectOp;
-        // inital value
-        let result = 0;
-
-        // if user select divide to prevent infinity
-        if(selectOp === '/') {
-            result = i === 0 ? '(Cannot divide by zero)' : (baseInput / i).toFixed(2);
+/*     for(let i = 1; i <= 30; i++) {
+        if(i % 3 === 0 && i % 5 === 0) {
+            console.log('FizzBuzz');
+        } else if(i % 3 === 0) {
+            console.log('Fizz');
+        } else if(i % 5 === 0) {
+            console.log('Buzz')
         } else {
-            result = eval(`${baseInput} ${selectOp} ${i}`);
+            console.log(i);
         }
+    } */
 
-        return `${baseInput} ${symbol} ${i} = ${result}`;
-    }
 
-    function delay(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
-    }
+    /* 
+    syntax 
+    for (initial, codition, increment)
+    */
+/*     let i = 1
+    while(i <= 5) {
+        if(i % 3 === 0) {
+            continue;
+        } 
+        console.log(i);
+        i++;
+        // console.log(i);
+    }    */
 
-    function clearInput() {
-        element('#baseNumber').value = '';
-        element('#maximumNumber').value = '';
-        values['baseInput'] = 0;
-        values['maxInput'] = 0;
-        disableSelectOperator(true);
-        showElement('#btn', 'none');
-    }
 
-    disableSelectOperator(true);
-    showElement('#content', 'block');
-    showSetText('#content', '- table will appear here -');
-})(); 
+    // task 1
+    // let i = 1
+    // for (; i <= 10; i++) {
+    //     console.log(i);
+    // }
+    // let i = 1;
+    // while(i <= 10) {
+    //     console.log(i);
+    //     i++;
+    // }
+    // let i = 1;
+    // do {
+    //     console.log(i);
+    //     i++;
+    // } while (i <= 10)
+
+    // const numbers = [1,2,3,4,5,6,7,8,9,10];
+
+    // for (let num of numbers) {
+    //     console.log(num);
+    // }
+
+    // task 2
+    // for (let i = 1; i <= 20; i++) {
+    //     if(i % 2 === 0) {
+    //         console.log(i);
+    //     }
+    // }
+
+    // let N = 5;
+    // let sum = 0;
+    // let counter = 1;
+
+    // for(; counter <= N; counter++) {
+    //     sum += counter;
+    // } 
+    // console.log(sum);
+
+    // task 4
+    // let i = 1;
+    // do {
+    //     console.log(i);
+    //     i++;
+    // } while (10 >= i);
+
+    // task 5
+
+    // for (let i = 1; i <= 10; i++) {
+    //     console.log(`${5} x ${i} = ${eval(5 * 1)}`);
+    // }
+
+    // const n = 5;
+    
+    // console.log(`Multiplication Table: ${n}`);
+
+    // for (let i = 1; i <= 10; i++) {
+    //     console.log(`${n} x ${i} = ${n * i}`);
+    // }

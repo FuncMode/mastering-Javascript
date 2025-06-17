@@ -725,3 +725,52 @@ function checKAgeEnterEvent(age, isbanned) {
 }
 
 checKAgeEnterEvent(28, false); */
+
+
+// console.log('hello' && 33);
+
+
+// const enterRole = prompt('enter your role');
+
+// const fallback = enterRole || 'guest';
+
+// console.log(fallback);
+
+
+/* 
+== - tinitignan lang kung same value
+=== - tinitignan kung same sila ng value at ng data type
+!= - titignan kung hindi ba sila same ng value
+!== - tinitignan kung di ba sila same ng value at ng data type
+*/
+
+// console.log(5 == [5]);
+// console.log(5 === '5');
+// console.log(false != 0);
+// console.log(false !== 0);
+
+// const user = {};
+
+// ang user ba ay instance (or gawa ba siga galing class or function constructor object or sa isang built-in object)
+// console.log(user instanceof Object);
+
+
+
+/* function Person(name, age) {
+    this.name = name;
+    this.age = age;
+} */
+
+
+/* 
+sytax:
+(object instanceOf(operator) constructorFunction)
+
+*/
+/* 
+const person1 = new Person('pogi', '21');
+console.log(person1 instanceof Person); */
+
+
+// console.log(new String instanceof Object);
+

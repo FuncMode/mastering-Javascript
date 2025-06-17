@@ -53,7 +53,7 @@ dito sa example na toh meron tayong asynchronous na settimeout na may delay na 2
 
 // setTimeout(() => {
 //     console.log('done');
-// }, 3000);
+// }, 3000); 
 
 // console.log('end');
 
@@ -85,3 +85,109 @@ fetchData()
     diplayProcess(err);
 }) 
  */
+
+
+/* 
+
+function runInChunks(start, end) {
+  if (start >= end) return;
+  for (let i = start; i < start + 1000 && i < end; i++) {
+    // Mabigat na task (ex. render DOM)
+  }
+  setTimeout(() => runInChunks(start + 1000, end), 0);
+}
+runInChunks(0, 10000); // ✅ smoother execution */
+
+
+// function throttle(fn, limit) {
+//   let lastCall = 0;
+//   return function (...args) {
+//     const now = Date.now();
+//     console.log(now);
+//     if (now - lastCall >= limit) {
+//       lastCall = now;
+//       fn(...args);
+//     }
+//       console.log(lastCall);
+
+//   };
+// }
+
+// window.addEventListener('scroll', throttle(() => {
+//   console.log("Throttled scroll event");
+// }, 200));
+
+
+
+    // function throttle(fn, limit) {
+    //   let lastCall = 0;
+    //   return function (...args) {
+    //     const now = Date.now();
+    //     if (now - lastCall >= limit) {
+    //       lastCall = now;
+    //       fn(...args);
+    //     }
+    //   };
+    // }
+
+    // const updateScroll = () => {
+    //   document.getElementById("status").textContent = `ScrollY: ${window.scrollY}`;
+    // };
+
+    // window.addEventListener("scroll", throttle(updateScroll, 200));
+
+/* 
+      function debounce(fn, delay) {
+    let timeout;
+    return function (...args) {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => fn(...args), delay);
+    };
+  }
+
+  const fakeSearch = (text) => {
+    document.getElementById("result").textContent = `Searching for "${text}"...`;
+  };
+
+  document.getElementById("search").addEventListener(
+    "input",
+    debounce((e) => {
+      fakeSearch(e.target.value);
+    }, 500)
+  ); */
+
+
+
+/*     function returnFun(num) {
+        return (double) => {
+            let total = num * double;
+            return total;
+        }
+    }
+
+    console.log(returnFun(12)(4)); */
+
+
+/*       function memoize(fn) {
+    const cache = {};
+    return function (x) {
+      if (x in cache) {
+        return cache[x];
+      }
+      const result = fn(x);
+      cache[x] = result;
+      return result;
+    };
+  }
+
+  const factorial = memoize(function(n) {
+    if (n === 0 || n === 1) return 1;
+    return n * factorial(n - 1);
+  });
+
+  document.getElementById("num").addEventListener("input", (e) => {
+    const val = Number(e.target.value);
+    if (!isNaN(val)) {
+      document.getElementById("output").textContent = `Factorial: ${factorial(val)}`;
+    }
+  }); */

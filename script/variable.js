@@ -173,3 +173,76 @@ varFunc(); */
 // console.log(original);
 // console.log(copy = 'hello world');
 // console.log(original);
+
+
+/* const userInputName = prompt('type your name');
+
+// if no input user or cancel ang guest ang dedeclare kase ang || or operator kahit isa ang true goods lang
+const userName = userInputName || 'guest';
+console.log(userName);
+ */
+
+
+/* const userInputName = prompt('type your name');
+
+function getInputUser() {
+    return userInputName || 'tete';
+}
+
+console.log(getInputUser()); */
+
+// let i = 0;
+// while(8 > i) {
+//     console.log('hello world', i);
+// }
+
+
+//  async function runFlow() {
+//       let output = document.getElementById("output");
+//       output.innerHTML = "<strong>Running flow...</strong><br>";
+
+//       // Sequential
+//       let x = 5;
+//       output.innerHTML += `x is ${x}<br>`;
+
+//       // Conditional
+//       if (x > 3) {
+//         output.innerHTML += "x is greater than 3<br>";
+//         sayHello();
+
+//         // Async
+//         await new Promise(resolve => setTimeout(resolve, 2000));
+//         output.innerHTML += "Done waiting 2 seconds (⏳ async)<br>";
+//       } else {
+//         output.innerHTML += "x is NOT greater than 3<br>";
+//       }
+//     }
+
+//     function sayHello() {
+//       let output = document.getElementById("output");
+//       output.innerHTML += "Hello from the function!<br>";
+//     }
+
+
+
+// seqeantial
+
+// sunod sunod from top to bottom
+// const number = 10;
+// console.log(number);
+
+
+// loop flow
+// paulit ulit habang true
+
+
+// let i = 0;
+// for (; i < 5; i++) {
+//     console.log(i);
+// }
+
+/* let i = 0;
+while(i < 5) {
+    console.log('hello world', i);
+    i++;
+} */
