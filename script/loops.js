@@ -961,3 +961,502 @@ if odd console(number) and odd kung hindi console(even) and number
     // for (let i = 1; i <= 10; i++) {
     //     console.log(`${n} x ${i} = ${n * i}`);
     // }
+
+    
+
+
+
+/*     let i = 1;
+    for(; i <= 5; i++) {
+        console.log(i);
+    } */
+
+/*     let i = 1;
+
+    while(i <= 10) {
+        console.log(i);
+        i++;
+    } */
+
+    // let i = 1;
+    // do {
+    //     console.log(i);
+    //     i++;
+    // } while(i > 10);
+
+/*     let str = 'hello world';
+
+    for (let string of str) {
+        console.log(string);
+    } */
+
+/* 
+    const nums = [1,2,3,4,5];
+
+    for (let n in nums) {
+        console.log(n);
+    } */
+
+/*     for (let i = 1; i <= 10; i++) {
+        console.log(i);
+    } */
+
+        // for (let i = 2; i <= 20; i++) {
+        //     if (i % 2 === 0) {
+        //         console.log(i);
+        //     } else {
+        //         console.log('not');
+        //     }
+        // }
+        // let i = 5;
+        // let counter = 1;
+        // let sum = 0;
+
+/*         for (; counter <= i; counter++) {
+            // console.log(counter);
+            sum += counter;
+        }
+        console.log(sum); */
+/* 
+        let i = 10;
+
+        do {
+            console.log(i);
+            i--;
+        } while (i > 0); */
+
+        // let n = 5;
+        // let i = 0
+        // for (; i < n; i++) {
+        //     console.log(`${n} x ${i} = ${n * i}`);
+        // }
+
+
+        // function factorial(n) {
+        //     let result = 1;
+
+        //     for (let i = 2; i <= n; i++) {
+        //         // result *= i;
+        //         // console.log(n);
+        //         console.log(i);
+        //     }
+        //     // return result;
+        // }
+        // factorial(5);
+
+        // console.log(factorial(5));
+        // // console.log(5 ** 4);
+
+/*         function recursiveFactorial(n) {
+            if(n === 0  || n === 1) return 1;
+            return n * recursiveFactorial(console.log(n));
+        }
+
+        console.log(recursiveFactorial(5)); */
+
+
+
+        // function recursive(num) {
+        //     if(num === 0) {
+        //         return 0;
+        //     }
+        //     console.log(num);
+
+        //     return recursive(num - 1);
+        // }
+
+        // recursive(5);
+/*     let sum = 0;
+        function recursive(n) {
+            if(n === 0) {
+                return 0;
+            }
+            sum += recursive(n - 1);
+        }
+        recursive(5);
+        console.log(sum); */
+
+/* 
+        function recursive(n) {
+            if(n === 0 || n === 1) {
+                return 1;
+            }
+
+            return n * recursive(n - 1);
+        }
+
+        console.log(recursive(4)); */
+
+        // function recursive(n) {
+        //     if(n > 0) {
+        //         n - 1;
+        //     }
+        //     return recursive(n - 1);
+        // }
+
+
+        // const obj = {
+        //     name: 'angelito',
+        //     age: 21,
+        //     grade: {math: 24, english: 21}
+        // }
+
+        // function iterate(obj) {
+        //     for(let key in obj) {
+        //         if(typeof obj[key] === 'object') {
+        //             iterate(obj[key])
+        //         } else {
+        //             console.log(obj[key]);
+        //         }
+        //     }
+        // }
+
+        // iterate(obj);
+
+    // const array = [1,2,3,4,4,5];
+    // const find = 4;
+    // for(let i = 0; i <= array.length; i++) {
+    //     if(array.includes(find)) {
+    //         console.log(i)
+    //     } else  {
+    //         console.log('not found');
+    //     }
+    // }
+/*     const nums = [1,2,3,4,5];
+    for(let i = 0; i < nums.length; i++) {
+        if(nums[i] === 4) {
+            console.log('yes') 
+        } else {
+            console.log('no')
+        }
+    } */
+
+
+    // for(let i = 0; i < 5; i++) {
+    //     if(i === 3) {
+            
+    //     }
+    // }
+/*     let i = 0;
+    for (; i <= 10; i++) {
+        console.log(i);
+    } */
+
+/*     let sum = 0;
+    for (let i = 1; i <= 100; i++) {
+        sum += i;
+    }
+
+    console.log(sum); */
+
+/*     for(let i = 2; i <= 20; i++) {
+        if(i % 2 === 0) {
+            console.log(i);
+        }
+    } */
+
+/*     let fruits = ["apple", "banana", "cherry"];
+
+    for (let i = 0; i < fruits.length; i++) {
+        if(fruits[i] === 'cherry') {
+            break;
+        } else {
+            console.log(fruits[i]);
+        }
+    } */
+
+/*     let i = 0;
+    for (; i < 5; i++) {
+        if(i === 5) break;
+        console.log(i);
+    } */
+/*     let i = 0;
+    for(; i <= 5; i++) {
+        if(i % 2 === 0) continue;
+        console.log(i);
+    } */
+
+/*     (() => {
+        const selector = (el) => document.querySelector(el);
+        const eventListener = (el, event, callback) => selector(el).addEventListener(event, callback);
+        const inputValue = (el) => selector(el).value.trim(); 
+        const disabledBtn = (el, value) => selector(el).disabled = value;
+        const containerOutput = (el) => selector(el);
+        // default disable btn
+        disabledBtn('#generate', true);
+
+        const values = {
+            firstInputNumber: null,
+            secondInputNumber: null,
+        }
+
+        function handleInputUser(el, event, key) {
+            eventListener(el, event, () => {
+                const value = inputValue(el);
+                values[key] = value || 0;
+                validateInputValue();
+                // console.log(values['firstInputNumber'], values['secondInputNumber']);
+            });
+        }
+
+        handleInputUser('#firstInputNumber', 'input', 'firstInputNumber');
+        handleInputUser('#secondInputNumber', 'input', 'secondInputNumber');
+
+        function validateInputValue() {
+            const { firstInputNumber, secondInputNumber } = values;
+            // console.log(firstInputNumber, secondInputNumber);
+
+            if(firstInputNumber > 10 || secondInputNumber > 10) {
+                alert('10 maximum number required');
+                disabledBtn('#generate', true);
+                return;
+            }
+
+
+            // if(firstInputNumber)
+            disabledBtn('#generate', false);
+        }
+
+        eventListener('#generate', 'click', generateTable);
+        document.addEventListener('keydown', (e) => {
+            const {  firstInputNumber, secondInputNumber } = values;
+            if(e.key === 'Enter') {
+                if(firstInputNumber > 10 || secondInputNumber > 10) {
+                    alert('10 maximum numbers!');
+                    return;
+                }
+                generateTable();
+            }
+        });
+
+        function generateTable() {
+            containerOutput('#output').innerHTML = '';
+            const { firstInputNumber, secondInputNumber } = values;
+
+            const fragment = document.createDocumentFragment();
+
+            for(let i = 0; i <= secondInputNumber; i++) {
+                
+                const output = document.createElement('p');
+                output.textContent = `${firstInputNumber} x ${i} = ${firstInputNumber * i}`;
+                fragment.appendChild(output);
+            }
+
+            containerOutput('#output').appendChild(fragment);
+        }
+    })(); */
+
+
+/*     for(let i = 1; i <= 5; i++) {
+        if(i % 2 === 0) {
+            break;
+        }
+
+        console.log(i);
+    } */
+
+/*     let fruits = ["apple", "banana", "cherry"];
+
+
+    for(let i = 0; i < fruits.length; i++) {
+            if(fruits[i] === 'apple') continue;
+            console.log(fruits[i]);
+    } */
+
+/*     for (let i = 1; i <= 10; i++) {
+        if (i === 5) break;
+        console.log(i);
+    } */
+    /* let i = 1; 
+    for(;i <= 30; i++) {
+        if(i % 3 === 0 && i % 5 === 0) {
+            console.log('FizzBuzz');
+        } else if(i % 3 === 0) {
+            console.log('Fizz');
+        } else if(i % 5 === 0) {
+            console.log('Buzz');
+        } else {
+            console.log(i);
+        }
+    } */
+
+//     function isPalindrome(str) {
+//         let len = str.length;
+//         let i = 0;
+
+//         for(; i < len; i++) {
+//             // console.log(str[len - 1 - i]);
+//             // console.log(str[i]);
+//             // console.log(str[i]);
+//             console.log(str[len - 1 - i]);
+//         }
+//         return true;
+//     }
+
+//     let word = 'hello';
+//     if(isPalindrome(word)) {
+//     console.log(`${word} is a palindrome`);
+//     } else {
+//     console.log(`${word} is NOT a palindrome`);
+// }
+// let str = 'hello';
+// console.log(str.length);
+// let i = 0;
+
+// for(; i < str.length; i++) {
+//     console.log(str[str.length - 1 - i], i);
+// }
+
+/* function customRangePrinter(start, end, step) {
+    let i = start;
+    for(; i <= end; i += step) {
+        console.log(i);
+    }
+}
+
+customRangePrinter(1, 10, 2); */
+
+/* 
+function customRangePrinter(start, end, step) {
+    if (step === 0) {
+        console.log("Step cannot be zero!");
+        return;
+    }
+
+    // forward counting
+    if (step > 0) {
+        for (let i = start; i <= end; i += step) {
+            console.log(i);
+        }
+    } else {  // backward counting
+        for (let i = start; i >= end; i += step) {
+            console.log(i);
+        }
+    }
+}
+
+// Example backward counting:
+customRangePrinter(10, 1, -2); */
+
+/* for(let i = 1; i < 20; i++) {
+    if(i % 3 === 0) {
+        console.log(i);
+    }
+} */
+/* 
+    for(let i = 10; i >= 1; i--) {
+        console.log(i);
+    } */
+
+/*     for(let i = 3; i <= 30; i++) {
+        if(i % 3 === 0) {
+            console.log(i);
+        }
+    } */
+
+/*     const personNames = ['ako', 'sila', 'tayo'];
+
+    for(let n of personNames) {
+        console.log(`hi ${n}`);
+    } */
+
+    
+/*     const totalOfEvenNum = [];
+
+    for(let i = 1; i < 100; i++) {
+        if(i % 2 === 0) {
+            totalOfEvenNum.push(i);
+        }
+    }
+    console.log(`the total of Even Numbers from 1 - 100 is: ${totalOfEvenNum.length}`); */
+
+/*     for (let i = 1; i <= 20; i++) {
+  if (i % 2 !== 0) {
+    console.log(i);
+  }
+}
+ */
+
+
+/* for (let i = 3; i <= 30; i += 3) {
+  console.log(i);
+} */
+
+/*   let count = 0;
+for(let i = 1; i <= 100; i++) {
+    if(i % 2 === 0) {
+        count++;
+    }
+}
+console.log(`Even numbers from 1 to 100: ${count}`); */
+/* 
+let count = 0;
+for(let i = 1; i <= 10; i++) {
+    if(i % 2 !== 0) {
+        count++;
+    }
+}
+console.log(count); */
+
+/* for (let i = 1; i <= 10; i++) {
+    for (let j = 1; j <= 10; j++) {
+        console.log(`${i} x ${j}`);
+    }
+} */
+
+
+/*     for(let i = 1;  i <= 50; i++) {
+        if(i % 3 === 0 && i % 5 === 0) {
+            console.log('FizzBuzz');
+        } else if(i % 3 === 0) {
+            console.log('Fizz');
+        } else if(i % 5 === 0) {
+            console.log('Buzz');
+        } else {
+            console.log(i);
+        }
+    } */
+
+/*     function countVowels(str) {
+        let count = 0;
+        const vowels = 'aeiou';
+
+        for(let i = 0; i < str.length; i++) {
+            let char = str[i].toLowerCase();
+
+            if(vowels.includes(char)) { 
+                count++;
+            }
+        }
+        console.log(`vowels count: ${count}`);
+    }
+
+    countVowels('hello world') */
+
+    // let arr = [1,2,3,4];
+
+    // for(let i = 0; i < arr.length; i++) {
+    //     console.log(arr[arr.length - 1 - i]);
+    // } 
+
+// let rows = 5;
+
+// for (let i = 1; i <= rows; i++) {
+//     let space = ''; // para sa spaces
+//     let star = '';  // para sa stars
+//     // console.log(i);
+//     // First inner loop: spaces
+//     for (let j = 1; j <= rows - i; j++) {
+//         space += ' ';
+//         // console.log(j);
+//         // console.log(space);
+//     }
+
+//     // Second inner loop: stars
+//     // for (let k = 1; k <= 2 * i - 1; k++) {
+//     //     star += '*';
+//     // }
+
+//     // console.log(space + star);
+// }
+

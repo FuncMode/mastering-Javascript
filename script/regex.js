@@ -656,4 +656,80 @@ const isValidPass =
     // console.log(demo())
 
 
-    
+    // const except = /a.b/s;
+    // console.log(except.test('a3b'));
+/* 
+    const startStr = /^[a-zA-Z0-9]/;
+    console.log(startStr.test('hello world'))
+ */
+
+    // const digit = /\d/;
+    // const nonDigit = /\D/;
+    // console.log(digit.test('ererer'));
+    // console.log(nonDigit.test('sdfsdfdsf983'));
+
+    // const match = /[abc]/;
+    // console.log(match.test('abc'));
+
+
+    // const match = /[^abc]/;
+    // console.log(match.test('ok lang ako'))
+
+    // const space = /\s+/;
+    // console.log(space.test(' '))
+/* 
+const str = 'hello world 33 3434 343';
+console.log(str.match(/\d+/g)); */
+
+// const post = '#conding, #livewell #kainkana';
+// console.log(post.match(/#\w+/g));
+
+/* const regex = /hello/;
+console.log(regex.test('Hello')) */
+
+// const selector = (el) => document.querySelector(el);
+// const eventListener = (el, action, callback) => selector(el).addEventListener(action, callback);
+
+
+/* eventListener('#username', 'input', () => {
+const inputValue = selector('#username').value;
+
+const regex = new RegExp(inputValue, 'g');
+    console.log(regex);
+})
+ */
+
+// const regex = new RegExp(, 'g');
+/* 
+const except = /[a-zA-Z]+\./;
+console.log(except.test('hello.')) */
+
+// const startStr = /^[a-zA-Z]/;
+// console.log(startStr.test(2343));
+// console.log(startStr.test('ok'))
+
+
+// const endStr = /[a-zA-Z]$/;
+// console.log(endStr.test('08304edfer'))
+
+// const times = /ww*/;
+// 
+// console.log(times.test('wwwww'))
+
+// const questionMark = /lo?/;
+// console.log(questionMark.test('l'))
+
+// const digit = /\d/;
+// console.log(digit.test(0))
+// console.log()
+
+// const str = 'a232323gertrt45sdf3434';
+
+// const getDigit = /\d/g;
+// console.log(str.match(/\d+/g));
+
+// const getNonDigit = str.match(/\D+/g);
+// console.log(getNonDigit);
+
+/* const str = 'absalmfwmere, , ererere';
+console.log(str.match(/\w?/g)); */
